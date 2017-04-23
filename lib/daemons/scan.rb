@@ -1,19 +1,24 @@
 require 'socket'
+require 'sidekiq'
+
+require_relative '../../app/workers/scan_worker'
 
 module Daemons
   class Scan
-    def self.listen
-      server = TCPServer.new 8181
+    class << self
+      def listen(port: '8181')
+        server = TCPServer.new port
 
-      client = server.accept
+        while true
+          client = server.accept
 
-      puts "new client: #{client}"
+          while message = client.gets
+            ScanWorker.perform_async(message)
+          end
 
-      while message = client.gets
-        puts message
+          client.close
+        end
       end
-
-      client.close
     end
   end
 end

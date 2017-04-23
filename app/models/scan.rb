@@ -1,2 +1,0 @@
-class Scan < ApplicationRecord
-end

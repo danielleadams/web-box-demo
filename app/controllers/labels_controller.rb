@@ -4,7 +4,8 @@ class LabelsController < ApplicationController
   end
 
   def create
-    label = Label.create!(label_params)
+    label = Label.create(label_params)
+    label.try(:print!)
 
     ###
     # Use any way to connect to printer.
