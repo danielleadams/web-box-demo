@@ -146,6 +146,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    wirble (0.1.3)
 
 PLATFORMS
   ruby
@@ -164,9 +165,7 @@ DEPENDENCIES
   sqlite3
   turbolinks (~> 5)
   web-console (>= 3.3.0)
-
-RUBY VERSION
-   ruby 2.3.1p112
+  wirble
 
 BUNDLED WITH
    1.14.6
