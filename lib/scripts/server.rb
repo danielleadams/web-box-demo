@@ -15,5 +15,7 @@ while true
     puts "Message: #{message}"
   end
 
+  puts "Closing client: #{client}"
+
   client.close
 end
