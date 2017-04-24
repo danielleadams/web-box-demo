@@ -1,0 +1,79 @@
+<h3>Check out all the labels</h3>
+<% if @created_labels.any? %>
+  <h4>Created Labels</h4>
+  <table class="table table-hover">
+    <thead>
+      <th>
+        #
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Position
+      </th>
+    </thead>
+    <% @created_labels.each do |label| %>
+      <tbody>
+        <tr>
+          <td><%= label.id %></td>
+          <td><%= label.name %></td>
+          <td><%= label.position %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+<% end %>
+<% if @printed_labels.any? %>
+  <h4>Printed Labels</h4>
+  <table class="table table-hover">
+    <thead>
+      <th>
+        #
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Position
+      </th>
+    </thead>
+    <% @printed_labels.each do |label| %>
+      <tbody>
+        <tr>
+          <td><%= label.id %></td>
+          <td><%= label.name %></td>
+          <td><%= label.position %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+<% end %>
+<% if @scanned_labels.any? %>
+  <h4>Scanned Labels</h4>
+  <table class="table table-hover">
+    <thead>
+      <th>
+        #
+      </th>
+      <th>
+        Name
+      </th>
+      <th>
+        Position
+      </th>
+    </thead>
+    <% @scanned_labels.each do |label| %>
+      <tbody>
+        <tr>
+          <td><%= label.id %></td>
+          <td><%= label.name %></td>
+          <td><%= label.position %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+<% end %>
+<% if @scanned_labels.empty? && @printed_labels.empty? && @created_labels.empty? %>
+  <p>No labels to display... yet.</p>
+<% end %>
