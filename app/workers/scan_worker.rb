@@ -4,8 +4,8 @@ class ScanWorker
   sidekiq_options queue: 'devices'
 
   def perform(message)
-    name = message.strip
-    label = Label.find_by(name: name)
+    id = message.strip
+    label = Label.find(id)
     label.try(:scan!)
   end
 end

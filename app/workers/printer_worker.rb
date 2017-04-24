@@ -5,7 +5,7 @@ class PrinterWorker
 
   sidekiq_options queue: 'devices'
 
-  IP = 'localhost'
+  IP = '192.168.2.2'
   PORT = 9100
 
   def perform(message)

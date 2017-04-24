@@ -13,6 +13,8 @@ module Daemons
           client = server.accept
 
           while message = client.gets
+            puts "Message received: #{message}"
+
             ScanWorker.perform_async(message)
           end
 

@@ -19,14 +19,20 @@ class Label < ApplicationRecord
   end
 
   def zpl
-    Label.zpl(name, position)
+    Label.zpl(id, name, position)
   end
 
   class << self
-    def zpl(name, position)
+    def zpl(id, name, position)
       <<-eos
         ^XA
-        ^CF0,100^FO50,50^FDHello #{name}!^FS
+        ^FO15,15^BQN,2,6^FDID-#{id}^FS
+        ^CF0,50
+        ^FO160,30^FDHello, my name is:^FS
+        ^CF0,120
+        ^FO160,90^FD#{name}^FS
+        ^CF0,50
+        ^FO160,200^FDTitle: #{position}^FS
         ^XZ
       eos
     end

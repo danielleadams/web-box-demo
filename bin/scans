@@ -3,6 +3,6 @@ require_relative '../lib/daemons/scan'
 
 port = ARGV[0]
 
-puts "* Listening for scans on tcp://localhost/#{port}"
+puts "* Listening for scans on tcp://localhost:#{port}"
 
 Daemons::Scan.listen(port: port)
