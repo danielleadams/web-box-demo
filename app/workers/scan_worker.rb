@@ -5,7 +5,7 @@ class ScanWorker
 
   def perform(message)
     id = message.strip
-    label = Label.find(id)
+    label = Label.find_by(id: id)
     label.try(:scan!)
   end
 end
