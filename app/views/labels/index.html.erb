@@ -77,3 +77,6 @@
 <% if @scanned_labels.empty? && @printed_labels.empty? && @created_labels.empty? %>
   <p>No labels to display... yet.</p>
 <% end %>
+<div>
+  <%= link_to 'Create Label', controller: :labels, action: :new %>
+</div>
