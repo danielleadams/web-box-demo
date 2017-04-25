@@ -1,9 +1,9 @@
 require 'socket'
 
-IP = 'localhost'
-PORT = ARGV[0] || '8080'
+IP = ARGV[0] || 'localhost'
+PORT = ARGV[1] || '8080'
 
-message = ARGV[1]
+message = ARGV[2]
 
 socket = TCPSocket.new IP, PORT
 

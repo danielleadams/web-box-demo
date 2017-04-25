@@ -32,7 +32,7 @@ class Label < ApplicationRecord
         ^CF0,120
         ^FO160,90^FD#{name}^FS
         ^CF0,50
-        ^FO160,200^FDTitle: #{position}^FS
+        ^FO15,200^FDTitle: #{position}^FS
         ^XZ
       eos
     end
