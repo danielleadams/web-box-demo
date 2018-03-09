@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require_relative '../lib/daemons/scan'
 
-port = ARGV[0]
+port = ARGV[0] || 6000
 
 puts "* Listening for scans on tcp://localhost:#{port}"
 
